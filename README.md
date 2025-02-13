@@ -134,7 +134,7 @@
    mysql -u root
    CREATE DATABASE drupal_db;
    CREATE USER 'daniil'@'localhost' IDENTIFIED BY 'password';
-   GRANT ALL PRIVILEGES ON drupal_db.* TO 'daniil'@'localhost';
+   GRANT ALL PRIVILEGES ON drupal_db.* TO 'user'@'localhost';
    FLUSH PRIVILEGES;
    EXIT;
    ```
