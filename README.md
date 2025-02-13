@@ -29,7 +29,7 @@
 
 ![image](images/2.jpg)
 
-1. Вхожу в каталог `dvd` (`cd dvd`) и скачиваю ISO-образ:
+1. Вхожу в каталог `dvd` и скачиваю ISO-образ:
 
    ```sh
    wget -O debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.9.0-amd64-DVD-1.iso
