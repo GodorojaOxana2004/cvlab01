@@ -172,8 +172,6 @@
 
 ![image](images/drupal1.jpg)
 
-![image](images/drupal2.jpg)
-
 ![image](images/drupal3.jpg)
 
 ![image](images/drupal4.jpg)
