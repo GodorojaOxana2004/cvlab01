@@ -17,44 +17,55 @@
 
 1. Запускаю MYSYS2 и создаю директорию `lab01` командой `mkdir lab01`.
 
-2. Внутри `lab01` создаю папку `dvd` и файл `readme.md` командой `cat > readme.md`.
+   ![image](images/11.jpg)
 
-3. Перехожу на официальный сайт Debian и копирую ссылку для загрузки ISO-образа `64-bit PC DVD-1`.
+![image](images/3.jpg)
 
+3. Внутри `lab01` создаю папку `dvd` и файл `readme.md`.
 
+![image](images/4.jpg)
+
+5. Перехожу на официальный сайт Debian и копирую ссылку для загрузки ISO-образа`.
+
+![image](images/2.jpg)
 
 1. Вхожу в каталог `dvd` (`cd dvd`) и скачиваю ISO-образ:
 
    ```sh
    wget -O debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.9.0-amd64-DVD-1.iso
    ```
-
-   Ключ `-O` используется для сохранения файла под именем `debian.iso`.
-
+   
 2. Устанавливаю QEMU с помощью команды, указанной в официальной документации:
+![image](images/7.jpg)
+![image](images/8.jpg)
+![image](images/9.jpg)
 
    ```sh
    pacman -S mingw-w64-ucrt-x86_64-qemu
    ```
 
-3. Проверяю, что QEMU установлен:
+
+Проверяем, что QEMU установлен в лучшем случае и переходим дальше
 
 
+
+![image](images/13.jpg)
 
 ### Установка Debian в виртуальной машине
 
 1. Создаю виртуальный диск для установки ОС (8 ГБ, формат qcow2):
 
-   ```sh
+   ```
    qemu-img create -f qcow2 debian.qcow2 8G
    ```
 
 2. Запускаю установку Debian:
 
-   ```sh
+   ```
    qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
    ```
 
+![image](images/10.jpg)
    Первые несколько попыток завершились неудачно из-за бесконечной загрузки с диска.
 
    Успешная установка была выполнена через графический интерфейс.
