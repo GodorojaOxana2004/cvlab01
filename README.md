@@ -36,9 +36,7 @@
    ```
    
 2. Устанавливаю QEMU с помощью команды, указанной в официальной документации:
-![image](images/7.jpg)
-![image](images/8.jpg)
-![image](images/9.jpg)
+
 
    ```sh
    pacman -S mingw-w64-ucrt-x86_64-qemu
