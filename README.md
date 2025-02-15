@@ -13,32 +13,32 @@
 
 1. Устанавливаю MYSYS2.
 
-![image](images/10.jpg)
+   ![image](images/10.jpg)
 
-1. Запускаю MYSYS2 и создаю директорию `lab01` командой `mkdir lab01`.
+2. Запускаю MYSYS2 и создаю директорию `lab01` командой `mkdir lab01`.
 
    ![image](images/11.jpg)
 
-![image](images/3.jpg)
+   ![image](images/3.jpg)
 
 3. Внутри `lab01` создаю папку `dvd` и файл `readme.md`.
 
-![image](images/4.jpg)
+   ![image](images/4.jpg)
 
-5. Перехожу на официальный сайт Debian и копирую ссылку для загрузки ISO-образа`.
+4. Перехожу на официальный сайт Debian и копирую ссылку для загрузки ISO-образа`.
 
-![image](images/2.jpg)
+   ![image](images/2.jpg)
 
-1. Вхожу в каталог `dvd` и скачиваю ISO-образ:
+5. Вхожу в каталог `dvd` и скачиваю ISO-образ:
 
-   ```sh
+   ```
    wget -O debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.9.0-amd64-DVD-1.iso
    ```
    
-2. Устанавливаю QEMU с помощью команды, указанной в официальной документации:
+6. Устанавливаю QEMU с помощью команды, указанной в официальной документации:
 
 
-   ```sh
+   ```
    pacman -S mingw-w64-ucrt-x86_64-qemu
    ```
 
@@ -63,7 +63,7 @@
    qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
    ```
 
-![image](images/29.jpg)
+   ![image](images/29.jpg)
   
    Первые несколько попыток завершились неудачно (их было больше 5), а все из-за бесконечной загрузки с диска.
 
@@ -71,7 +71,7 @@
 
 
 
-1. Основные параметры установки:
+3. Основные параметры установки:
 
    - Имя хоста: **debian.localhost**
    - Пользователь: **user**, пароль: **password**
@@ -87,7 +87,7 @@
        -device e1000,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1080-:80,hostfwd=tcp::1022-:22
    ```
 
-![image](images/18.jpg)
+   ![image](images/18.jpg)
 
 ### Установка LAMP
 
@@ -95,7 +95,7 @@
    ```
    su
    ```
-   ![image](images/14su.jpg)
+
 2. Обновляю список пакетов и устанавливаю необходимые компоненты:
    ```
    apt update -y
@@ -124,7 +124,7 @@
    mv phpMyAdmin-5.2.2-all-languages /var/www/phpmyadmin
    mv drupal-11.1.1 /var/www/drupal
    ```
-![image](images/26.jpg)
+   ![image](images/26.jpg)
 ### Настройка базы данных
 
 1. Создаю базу данных для Drupal и пользователя:
@@ -136,7 +136,7 @@
    FLUSH PRIVILEGES;
    EXIT;
    ```
-![image](images/16.jpg)
+   ![image](images/16.jpg)
 ### Настройка виртуальных хостов Apache
 
 1. Добавляю конфигурации для PhpMyAdmin и Drupal в `/etc/apache2/sites-available/`.
@@ -162,23 +162,23 @@
    - `http://drupal.localhost:1080`
    - `http://phpmyadmin.localhost:1080`
 
-![image](images/phpmyadmin.jpg)
+   ![image](images/phpmyadmin.jpg)
 
-![image](images/phpmyadmin1.jpg)
+   ![image](images/phpmyadmin1.jpg)
 
-![image](images/drupal.jpg)
+   ![image](images/drupal.jpg)
 
-![image](images/drupal1.jpg)
+   ![image](images/drupal1.jpg)
 
-![image](images/drupal3.jpg)
+   ![image](images/drupal3.jpg)
 
-![image](images/drupal4.jpg)
+   ![image](images/drupal4.jpg)
 
-![image](images/drupal5.jpg)
+   ![image](images/drupal5.jpg)
 
-![image](images/drupal6.jpg)
+   ![image](images/drupal6.jpg)
 
-![image](images/drupal7.jpg)
+   ![image](images/drupal7.jpg)
 
 # Ответы на вопросы 
 
